@@ -1,38 +1,42 @@
 const express = require('express')
-// const mongoose = require('mongoose')
 const app = express()
 const port = process.env.PORT || '2000'
 //connection
 const connectiondb = require('./db/connectiondb')
-
 connectiondb()
 
+//Model import
 // require('./Model/Student') // simple import model
 
-//create call import
+//Create doc import
 // const createDoc = require('./Model/Student')
 
-//import simple
-const getdoc = require('./Model/Student') //import model and import doc function
-
+//read doc import
+// const getdoc = require('./Model/Student')
 
 //import multipe
 // const {createDoc,getdoc} = require('./Model/Student') //import model and import doc function
 
+// updatedoc import
+// const updatedocument = require('./Model/Student')
 
-
-//read data
-// const getdoc = require('./Model/Student')
-
+//delete import
+const deleteDocument = require('./Model/Student')
 
 
 //create call
 // createDoc()
 
-
 //read call
-getdoc()
+// getdoc()
 
+
+// updatedocument 
+// updatedocument('6394b388a151c521830a3450')
+// updatedocument()
+
+//deletedocument
+deleteDocument()
 
 app.listen(port , ()=>
 {

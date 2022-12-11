@@ -152,10 +152,73 @@ const StudentModel = mongoose.model('Student', studentSchema)
 // module.exports = getdoc;
 
 //age = > 18
-const getdoc =  async () =>
+// const getdoc =  async () =>
+// {
+//    const result = await StudentModel.find({age:{$gte:18}})
+//    console.log(result)
+// }
+
+// module.exports = getdoc;
+
+
+        //updateCode
+
+// const updatedocument = async (id) =>
+// {
+//     const result = await StudentModel.findByIdAndUpdate(id,{name:'ayesha ali'})
+//     console.log(result)
+// }
+// module.exports = updatedocument;
+
+//show update data in console after update
+// const updatedocument = async (id) =>
+// {
+//     const result = await StudentModel.findByIdAndUpdate(id,{name:'ayesha ali'},{returnDocument:'after'})
+//     console.log(result)
+// }
+// module.exports = updatedocument;
+
+//update One
+// const updatedocument = async (id) =>
+// {
+//     // const result = await StudentModel.updateOne({_id: id},{active:true})
+//     const result = await StudentModel.updateOne({name:'ali'},{name:'ali ahmed'})
+
+// }
+// module.exports = updatedocument;
+
+//upsert example
+// const updatedocument = async () =>
+// {
+//     const result = await StudentModel.updateOne({name:'hammad'},{name:'hammad javed' , age:15,active:false} ,{upsert:true})
+
+// }
+// module.exports = updatedocument;
+
+
+//update many example
+// const updatedocument = async () =>
+// {
+//     const result = await StudentModel.updateMany({active:false},{active:true})
+
+// }
+// module.exports = updatedocument;
+
+
+            //delete documents
+
+//byid
+// const deleteDocument = async() =>
+// {
+//    await StudentModel.findByIdAndDelete('6394ac36f43f921f08d1ca7b')
+// }
+
+// module.exports = deleteDocument;
+
+//delete one by filter
+const deleteDocument = async() =>
 {
-   const result = await StudentModel.find({age:{$gte:18}})
-   console.log(result)
+   await StudentModel.deleteOne({name:'hammad javed'})
 }
 
-module.exports = getdoc;
+module.exports = deleteDocument;
